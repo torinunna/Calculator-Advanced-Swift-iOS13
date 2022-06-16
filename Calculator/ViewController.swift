@@ -44,7 +44,27 @@ class ViewController: UIViewController {
         
         //What should happen when a number is entered into the keypad
         
-    
+        if let numValue = sender.currentTitle {
+            
+                if isFinishedTypingNumber {
+                    if numValue == "." {
+                        displayLabel.text = "0."
+                    } else {
+                        displayLabel.text = numValue
+                    }
+                    isFinishedTypingNumber = false
+                } else {
+                    
+                    if numValue == "." {
+                        if displayLabel.text!.contains(".") {
+                            return
+                        }
+                    }
+                    displayLabel.text = displayLabel.text! + numValue
+                }
+            
+            }
+        
     
     }
 
