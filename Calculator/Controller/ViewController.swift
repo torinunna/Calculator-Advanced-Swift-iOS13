@@ -22,7 +22,13 @@ class ViewController: UIViewController {
             return number
         }
         set {
-            displayLabel.text = String(newValue)
+            let isInt = floor(newValue) == newValue
+             
+                if isInt {
+                    displayLabel.text = String(format: "%.0f", newValue)
+                } else {
+                    displayLabel.text = String(newValue)
+                }
         }
     }
     
